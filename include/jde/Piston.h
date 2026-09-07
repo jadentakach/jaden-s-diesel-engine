@@ -25,7 +25,7 @@ public:
         float GetLength() { return length_; }
     };
 private:
-    float stroke_;
+    float stroke_{0.0f};
     Head* head_;
     Rod* rod_;
 public:
@@ -43,6 +43,11 @@ public:
     Piston() {
         head_ = new Head;
         rod_ = new Rod;
+    }
+
+    ~Piston() {
+        delete head_;
+        delete rod_;
     }
 
     void SetStroke(float stroke) {
