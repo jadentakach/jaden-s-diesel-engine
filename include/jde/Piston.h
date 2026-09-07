@@ -50,15 +50,14 @@ public:
         delete rod_;
     }
 
-    void SetStroke(float stroke) {
-        stroke_ = stroke;
-    }
+    void SetStroke(float stroke) { stroke_ = stroke; }
 
     float GetStroke() const { return stroke_; }
     float GetDisplacement() {
         float radius = head_->GetDiameter() / 2;
         return (pi * radius * radius * stroke_);
     }
+
     Head* GetHead() const { return head_; }
     Rod* GetRod() const { return rod_; }
 };
