@@ -15,8 +15,12 @@ public:
     Cylinder(float bore, float stroke) {
         bore_ = bore;
         stroke_ = stroke;
-        
+
         piston_ = new Piston;
         piston_->SetStroke(stroke_);
     }
+
+    Piston* GetPiston() const { return piston_; }
+    float GetBore() const { return bore_; }
+    float GetStroke() const { return stroke_; }
 };
