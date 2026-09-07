@@ -1,13 +1,20 @@
 #pragma once
 #include <iostream>
+#include <vector>
+#include <jde/Cylinder.h>
 
 class Engine {
 private:
-    int cylinders_;
+    std::vector<Cylinder*> cylinders_;
+    int cylinder_count_;
 public:
     Engine(int cylinders) {
         std::cout << "new engine initialized with " << cylinders << " cylinders" << std::endl;
-        cylinders_ = cylinders;
+        cylinder_count_ = cylinders;
+
+        for (int i = 0; i < cylinder_count_; i++) {
+            cylinders_.push_back(new Cylinder);
+        }
     }
 
     // TODO: when calculating stroke, use formula:
