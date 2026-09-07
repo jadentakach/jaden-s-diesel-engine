@@ -11,8 +11,8 @@ public:
         Head(float diameter, float height) : diameter_(diameter), height_(height) {}
         Head() : diameter_(104.394), height_(50.8) {} // defaults of a 7.3L Powerstroke (millimeters)
 
-        float GetDiameter() { return diameter_; }
-        float GetHeight() { return height_; }
+        float GetDiameter() const { return diameter_; }
+        float GetHeight() const { return height_; }
     };
 
     class Rod {
@@ -22,7 +22,7 @@ public:
         Rod(float length) : length_(length) {}
         Rod() : length_(181.1) {}
 
-        float GetLength() { return length_; }
+        float GetLength() const { return length_; }
     };
 private:
     float stroke_{0.0f};
@@ -54,11 +54,11 @@ public:
         stroke_ = stroke;
     }
 
-    float GetStroke() { return stroke_; }
+    float GetStroke() const { return stroke_; }
     float GetDisplacement() {
         float radius = head_->GetDiameter() / 2;
         return (pi * radius * radius * stroke_);
     }
-    Head* GetHead() { return head_; }
-    Rod* GetRod() { return rod_; }
+    Head* GetHead() const { return head_; }
+    Rod* GetRod() const { return rod_; }
 };
